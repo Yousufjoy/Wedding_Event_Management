@@ -1,8 +1,31 @@
 import { Link } from "react-router-dom";
 
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Login = () => {
+  const [successLogin, setSuccessLogin] = useState("");
+  const [unSuccessFullLogin, setUnSuccessFullLogin] = useState("");
+  const AuthInfo = useContext(AuthContext);
+  const { loginUser } = AuthInfo;
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    setSuccessLogin("");
+    setUnSuccessFullLogin("");
+    loginUser(email, password)
+      .then((result) => {
+        setSuccessLogin("Successfully Logged In!");
+      })
+      .catch((error) => {
+        setUnSuccessFullLogin(error.message);
+      });
+  };
+
   return (
     <div>
       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
@@ -17,7 +40,7 @@ const Login = () => {
               creating dream weddings, tailored to you.
             </p>
             <p className="flex flex-col items-center justify-center mt-10 text-center">
-              <span>Don't have an account?</span>
+              <span>Do not have an account?</span>
 
               <Link
                 className=" text-blue-300 font-semibold text-1xl"
@@ -31,7 +54,7 @@ const Login = () => {
             <h3 className="my-4 text-2xl font-semibold text-gray-700">
               Account Login
             </h3>
-            <form action="#" className="flex flex-col space-y-5">
+            <form onSubmit={handleLogin} className="flex flex-col space-y-5">
               <div className="flex flex-col space-y-1">
                 <label
                   htmlFor="email"
@@ -40,6 +63,7 @@ const Login = () => {
                   Email address
                 </label>
                 <input
+                  name="email"
                   type="email"
                   id="email"
                   autoFocus
@@ -56,6 +80,7 @@ const Login = () => {
                   </label>
                 </div>
                 <input
+                  name="password"
                   type="password"
                   id="password"
                   className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
@@ -93,6 +118,8 @@ const Login = () => {
                 </div>
               </div>
             </form>
+            <div className=" text-white bg-green-500">{successLogin}</div>
+            <div className=" text-white bg-red-500">{unSuccessFullLogin}</div>
           </div>
         </div>
       </div>

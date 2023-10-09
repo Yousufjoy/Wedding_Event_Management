@@ -1,6 +1,32 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 const Register = () => {
+  const [successReg, setSuccessReg] = useState("");
+  const [errorReg, setErrorReg] = useState("");
+  const AuthInfo = useContext(AuthContext);
+  const { createUser } = AuthInfo;
+
+  const handleRegistration = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(name, email, password);
+    setSuccessReg("");
+    setErrorReg("");
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        setSuccessReg("Successfully Registered!");
+      })
+      .catch((error) => {
+        setErrorReg(error.message);
+      });
+  };
+
   return (
     <div>
       <div>
@@ -8,11 +34,12 @@ const Register = () => {
           <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
             <div className="p-4 py-6 text-white bg-[#C3937C] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
               <div className="my-3 text-4xl font-bold tracking-wider text-center">
-                <a href="#">Wedding!</a>
+                <a href="#">BlissfulEvents</a>
               </div>
               <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-                With the power of K-WD, you can now focus only on functionaries
-                for your digital products, while leaving the UI design on us!
+                Welcome to our wedding event management website, where dreams
+                become reality. Crafting unforgettable weddings, your way,
+                creating dream weddings, tailored to you.
               </p>
               <p className="flex flex-col items-center justify-center mt-10 text-center">
                 <span>Already have an account?</span>
@@ -29,7 +56,10 @@ const Register = () => {
               <h3 className="my-4 text-2xl font-semibold text-gray-700">
                 Register!
               </h3>
-              <form className="flex flex-col space-y-5">
+              <form
+                onSubmit={handleRegistration}
+                className="flex flex-col space-y-5"
+              >
                 <div className="flex flex-col space-y-1">
                   <label className="text-sm font-semibold text-gray-500">
                     Name
@@ -51,6 +81,7 @@ const Register = () => {
                     Email address
                   </label>
                   <input
+                    name="email"
                     type="email"
                     id="email"
                     autoFocus
@@ -67,6 +98,7 @@ const Register = () => {
                     </label>
                   </div>
                   <input
+                    name="password"
                     type="password"
                     id="password"
                     className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
@@ -78,9 +110,12 @@ const Register = () => {
                     type="submit"
                     className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-[#C3937C] rounded-md shadow hover:bg-[#EAD9C9] hover:text-white focus:outline-none focus:ring-blue-200 focus:ring-4"
                   >
-                    Log in
+                    Register
                   </button>
                 </div>
+                {/* Error Or success chcekc */}
+                <div className=" text-white bg-green-500">{successReg}</div>
+                <div className=" text-white bg-red-500"> {errorReg}</div>
               </form>
             </div>
           </div>

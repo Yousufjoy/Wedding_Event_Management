@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const Login = () => {
   const [successLogin, setSuccessLogin] = useState("");
   const [unSuccessFullLogin, setUnSuccessFullLogin] = useState("");
   const AuthInfo = useContext(AuthContext);
   const { loginUser } = AuthInfo;
+  const auth = getAuth(app);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,6 +26,18 @@ const Login = () => {
       })
       .catch((error) => {
         setUnSuccessFullLogin(error.message);
+      });
+  };
+
+  const loginWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -111,7 +126,10 @@ const Login = () => {
                     <span>
                       <AiFillGoogleCircle className=" text-blue-400 text-xl"></AiFillGoogleCircle>
                     </span>
-                    <span className="text-sm font-medium text-gray-800 group-hover:text-white">
+                    <span
+                      onClick={loginWithGoogle}
+                      className="text-sm font-medium text-gray-800 group-hover:text-white"
+                    >
                       Google
                     </span>
                   </a>

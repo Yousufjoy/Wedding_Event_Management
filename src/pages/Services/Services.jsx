@@ -15,7 +15,7 @@ const Services = () => {
   return (
     <div>
       <h1 className=" text-3xl text-center"> Our service</h1>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid lg:grid-cols-3 grid-cols-1 px-[50px] gap-3">
         {services.map((service) => {
           return (
             <SingleService key={service.id} service={service}></SingleService>

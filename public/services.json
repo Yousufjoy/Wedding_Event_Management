@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Wedding Planning",
     "description": "Comprehensive wedding planning services, from conceptualization to execution.",
-    "image": "https://i.ibb.co/D5yjSfT/1.jpg",
+    "image": "https://i.ibb.co/8zXq2Sv/1.jpg",
     "price": "20$",
     "short_description": "Let our expert planners turn your dream wedding into reality."
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "name": "Venue Selection",
     "description": "Assistance in finding and booking the perfect wedding venue.",
-    "image": "https://i.ibb.co/D5yjSfT/1.jpg",
+    "image": "https://i.ibb.co/k85Q86W/2.jpg",
     "price": "20$",
     "short_description": "Discover the ideal setting for your special day."
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "name": "Catering and Menu Design",
     "description": "Gourmet catering services and customized menu design.",
-    "image": "https://i.ibb.co/D5yjSfT/1.jpg",
+    "image": "https://i.ibb.co/rMSsRCF/3.jpg",
     "price": "20$",
     "short_description": "Delight your guests with exquisite cuisine."
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "name": "Floral and Decor",
     "description": "Floral arrangements and venue decor for a breathtaking atmosphere.",
-    "image": "https://i.ibb.co/D5yjSfT/1.jpg",
+    "image": "https://i.ibb.co/VvB8VmP/4.jpg",
     "price": "20$",
     "short_description": "Elevate your wedding's ambiance with our floral expertise."
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "name": "Photography and Videography",
     "description": "Professional photography and videography services to capture precious moments.",
-    "image": "https://i.ibb.co/D5yjSfT/1.jpg",
+    "image": "https://i.ibb.co/R7pPZ0T/5.jpg",
     "price": "20$",
     "short_description": "Preserve memories with our skilled photographers and videographers."
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "name": "Entertainment and DJ",
     "description": "Entertainment solutions, including DJs and live performers.",
-    "image": "https://i.ibb.co/D5yjSfT/1.jpg",
+    "image": "https://i.ibb.co/dPXGxst/6.jpg",
     "price": "20$",
     "short_description": "Keep the celebration going with top-notch entertainment."
   }

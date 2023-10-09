@@ -1,56 +1,25 @@
-import img1 from "../../../assets/1.jpg";
-import img2 from "../../../assets/2.jpg";
-import img3 from "../../../assets/3.jpg";
-import img4 from "../../../assets/4.jpg";
+import banner from "../../../assets/banner.png";
 
 const Slider = () => {
   return (
-    <div>
-      <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src={img1} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
+    <div className="lg:flex  lg:mt-[100px]">
+      <div className=" w-1/2 pl-[50px]">
+        <div className=" lg:pl-[120px] pl-[60px]">
+          <p className="text-[#787878] py-2 lg:pt-[175px] pt-[60px] text-base font-normal uppercase tracking-widest leading-tight">
+            Life is an event
+          </p>
+          <h1 className="text-[#787878] font-normal uppercase tracking-widest leading-tight lg:text-6xl text-4xl">
+            Creating the <br /> Best Day Ever
+          </h1>
+          <p className=" lg:text-start lg:w-[500px] w-[200px] py-[30px]">
+            A wedding event is a joyous and significant celebration that marks
+            the union of two people in love. It is a day filled with emotions,
+            traditions, and cherished moments.
+          </p>
         </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src={img2} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src={img3} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img src={img4} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
+      </div>
+      <div>
+        <img className=" lg:w-full" src={banner} alt="" />
       </div>
     </div>
   );

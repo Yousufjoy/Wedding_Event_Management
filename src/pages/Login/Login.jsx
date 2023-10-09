@@ -23,6 +23,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         setSuccessLogin("Successfully Logged In!");
+        console.log(result);
       })
       .catch((error) => {
         setUnSuccessFullLogin(error.message);
@@ -43,7 +44,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
+      <div className="flex items-center  min-h-screen p-4 bg-gray-100 lg:justify-center">
         <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
           <div className="p-4 py-6 text-white bg-[#C3937C] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
             <div className="my-3 text-4xl font-bold tracking-wider text-center">
@@ -85,6 +86,7 @@ const Login = () => {
                   className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                 />
               </div>
+
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label

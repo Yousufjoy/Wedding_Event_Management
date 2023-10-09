@@ -1,19 +1,22 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
-import Swal from "sweetalert2";
+import { getAuth, updateProfile } from "firebase/auth";
+
 const Register = () => {
   const [successReg, setSuccessReg] = useState("");
   const [errorReg, setErrorReg] = useState("");
   const AuthInfo = useContext(AuthContext);
   const { createUser } = AuthInfo;
-
+  const nav = useNavigate();
   const handleRegistration = (e) => {
+    const auth = getAuth();
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
+    const photo = e.target.photo.value;
+    console.log(name, email, password, photo);
     setSuccessReg("");
     setErrorReg("");
 
@@ -21,6 +24,20 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setSuccessReg("Successfully Registered!");
+
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            // Profile updated!
+            // ...
+            nav("/");
+          })
+          .catch((error) => {
+            // An error occurred
+            // ...
+          });
       })
       .catch((error) => {
         setErrorReg(error.message);
@@ -84,6 +101,21 @@ const Register = () => {
                     name="email"
                     type="email"
                     id="email"
+                    autoFocus
+                    className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                  />
+                </div>
+                <div className="flex flex-col space-y-1">
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-semibold text-gray-500"
+                  >
+                    PHOTO URL
+                  </label>
+                  <input
+                    name="photo"
+                    type="text"
+                    id="photo"
                     autoFocus
                     className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                   />

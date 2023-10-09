@@ -13,9 +13,11 @@ const SingleService = ({ service }) => {
           <h2 className="card-title">{name}</h2>
           <p>{description}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">{price}</button>
+            <button className="btn bg-[#e2b9a6] text-white font-bold">
+              {price}
+            </button>
             <Link to={`/details/${id}`}>
-              <button className="btn btn-danger">Show Details</button>
+              <button className="btn ">Show Details</button>
             </Link>
           </div>
         </div>

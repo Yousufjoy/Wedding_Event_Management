@@ -5,17 +5,22 @@ import { AuthContext } from "../../../providers/AuthProviders";
 const Navbar = () => {
   const AuthInfo = useContext(AuthContext);
   const { user, logOut } = AuthInfo;
+
   const navLinks = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/">
+          Home
+        </NavLink>
       </li>
 
       <li>
-        <a>Testimonials</a>
+        <a href="#testimonial" className="lg:text-lg text-[#C3937C]">
+          Testimonials
+        </a>
       </li>
       <li>
-        <a>Blog</a>
+        <a className="  text-[#C3937C] lg:text-lg">Blog</a>
       </li>
     </>
   );
@@ -51,19 +56,28 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">BlissfulEvents</a>
+        <a className="lg:text-2xl text-black">BlissfulEvents</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
         {user ? (
-          <button onClick={handleSignOut} className=" btn">
-            Sign Out
-          </button>
+          <>
+            <p> {user.email}</p>
+            <button onClick={handleSignOut} className=" btn">
+              Sign Out
+            </button>
+            <img
+              className=" w-[50px] h-[50px] "
+              referrerPolicy="no-referrer"
+              src={user.photoURL}
+              alt=""
+            />
+          </>
         ) : (
           <Link to="/login">
-            <button className=" btn">Login</button>
+            <button className="btn">Login</button>
           </Link>
         )}
       </div>

@@ -6,6 +6,7 @@ import CardDetails from "../pages/CardDetails/CardDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
   {
@@ -23,8 +24,14 @@ const routes = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <CardDetails></CardDetails>,
+        element: (
+          <PrivateRoute>
+            <CardDetails></CardDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("services.json"),
       },
+
       {
         path: "/login",
         element: <Login></Login>,

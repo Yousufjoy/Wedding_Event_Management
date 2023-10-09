@@ -1,12 +1,15 @@
+import Planning from "../Planning/Planning";
 import Services from "../Services/Services";
 import Slider from "./Slider/Slider";
+import Testimonial from "./TestiMonial/Testimonial";
 
 const Home = () => {
   return (
     <div>
-      <h2 className=" text-center text-6xl py-4">Creating the Best Day Ever</h2>
       <Slider></Slider>
       <Services></Services>
+      <Planning></Planning>
+      <Testimonial></Testimonial>
     </div>
   );
 };

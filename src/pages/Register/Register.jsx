@@ -26,7 +26,7 @@ const Register = () => {
     // Check if the password meets the criteria
     if (!uppercaseRegex.test(password) || !specialCharRegex.test(password)) {
       setErrorReg(
-        "Password must contain at least one uppercase letter and one special character."
+        "Password must contain at least one uppercase letter and one special character and should be atleast 6 letters."
       );
       return; // Don't proceed with registration if the password is invalid
     }

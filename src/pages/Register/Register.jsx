@@ -17,6 +17,19 @@ const Register = () => {
     const password = e.target.password.value;
     const photo = e.target.photo.value;
     console.log(name, email, password, photo);
+
+    // Regular expressions for password validation
+    const uppercaseRegex = /[A-Z]/;
+    const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+
+    // Check if the password meets the criteria
+    if (!uppercaseRegex.test(password) || !specialCharRegex.test(password)) {
+      setErrorReg(
+        "Password must contain at least one uppercase letter and one special character."
+      );
+      return; // Don't proceed with registration if the password is invalid
+    }
+
     setSuccessReg("");
     setErrorReg("");
 

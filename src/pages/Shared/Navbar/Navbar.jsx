@@ -15,12 +15,14 @@ const Navbar = () => {
       </li>
 
       <li>
-        <a href="#testimonial" className="lg:text-lg text-[#C3937C]">
-          Testimonials
-        </a>
+        <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/blog">
+          Blog
+        </NavLink>
       </li>
       <li>
-        <a className="  text-[#C3937C] lg:text-lg">Blog</a>
+        <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/contact">
+          Contact Us!
+        </NavLink>
       </li>
     </>
   );
@@ -64,7 +66,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <p> {user.email}</p>
+            <p className=" px-4"> {user.email}</p>
             <button onClick={handleSignOut} className=" btn">
               Sign Out
             </button>

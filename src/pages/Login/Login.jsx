@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [successLogin, setSuccessLogin] = useState("");
@@ -22,8 +23,10 @@ const Login = () => {
     setUnSuccessFullLogin("");
     loginUser(email, password)
       .then((result) => {
-        setSuccessLogin("Successfully Logged In!");
+        // setSuccessLogin("Successfully Logged In!");
         console.log(result);
+
+        Swal.fire("Logged in successfully!");
       })
       .catch((error) => {
         setUnSuccessFullLogin(error.message);

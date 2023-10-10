@@ -14,13 +14,19 @@ const Services = () => {
 
   return (
     <div className="  mt-[120px] lg:pl-[50px] max-w-[1600px] lg:ml-[150px] ">
-      <h1 className="text-[#787878]  text-3xl text-center py-10 uppercase tracking-widest leading-tight">
+      <h1
+        className="text-[#787878]  text-3xl text-center py-10 uppercase tracking-widest leading-tight"
+        data-aos="flip-left"
+      >
         Our services
       </h1>
       {/* <h1 className="text-[#787878] font-normal uppercase tracking-widest leading-tight lg:text-6xl">
         Creating the <br /> Best Day Ever
       </h1> */}
-      <div className="grid lg:grid-cols-3 grid-cols-1 pl-[15px] lg:px-[50px] gap-6">
+      <div
+        className="grid lg:grid-cols-3 grid-cols-1 pl-[15px] lg:px-[50px] gap-6"
+        data-aos="fade-up"
+      >
         {services.map((service) => {
           return (
             <SingleService key={service.id} service={service}></SingleService>

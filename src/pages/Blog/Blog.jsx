@@ -1,7 +1,9 @@
-import React from "react";
-
 const Blog = () => {
-  return <div></div>;
+  return (
+    <div className=" text-6xl h-[600px] w-[600px]" data-aos="zoom-out-left">
+      This is Blog Page
+    </div>
+  );
 };
 
 export default Blog;

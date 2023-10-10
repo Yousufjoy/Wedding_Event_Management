@@ -12,6 +12,15 @@ const Navbar = () => {
         <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/">
           Home
         </NavLink>
+        {/* 
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#C3937C] text-lg bg-blue" : "text-black text-lg"
+          }
+          to="/"
+        >
+          Home
+        </NavLink> */}
       </li>
 
       <li>

@@ -2,7 +2,7 @@ import imgx from "../../../assets/img1.jpg";
 
 const Testimonial = () => {
   return (
-    <div className=" my-6" id="testimonial ">
+    <div className=" my-6" id="testimonial " data-aos="zoom-in-right">
       <h1 className="text-[#787878]  text-3xl text-center py-10 uppercase tracking-widest leading-tight">
         Testimonials
       </h1>

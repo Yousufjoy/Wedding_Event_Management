@@ -4,7 +4,10 @@ const Planning = () => {
   return (
     <>
       <div className=" pt-[25px] pr-[100px] lg:pt-[50px] pl-[100px] lg:pl-[0px]">
-        <h1 className="text-[#787878]  text-3xl text-center py-2 uppercase tracking-widest leading-tight">
+        <h1
+          className="text-[#787878]  text-3xl text-center py-2 uppercase tracking-widest leading-tight"
+          data-aos="flip-right"
+        >
           About Us
         </h1>
         <div className="lg:flex my-[50px] lg:my-[100px] lg:mt-[100px] lg:pl-[120px] pl-[60px]">

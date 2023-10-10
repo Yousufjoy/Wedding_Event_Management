@@ -3,8 +3,8 @@ import banner from "../../../assets/banner.png";
 const Slider = () => {
   return (
     <div className="lg:flex  lg:mt-[100px]">
-      <div className=" w-1/2 pl-[50px]">
-        <div className=" lg:pl-[120px] pl-[60px]">
+      <div className=" w-1/2 pl-[50px]" data-aos="flip-left">
+        <div className=" lg:pl-[120px] pl-[60px]" data-aos-easing="ease-in-out">
           <p className="text-[#787878] py-2 lg:pt-[175px] pt-[60px] text-base font-normal uppercase tracking-widest leading-tight">
             Life is an event
           </p>
@@ -18,7 +18,7 @@ const Slider = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div data-aos="zoom-in-up">
         <img className=" lg:w-full" src={banner} alt="" />
       </div>
     </div>

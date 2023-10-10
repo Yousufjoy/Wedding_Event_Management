@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { getAuth, updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [successReg, setSuccessReg] = useState("");
@@ -36,7 +37,8 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        setSuccessReg("Successfully Registered!");
+        // setSuccessReg("Successfully Registered!");
+        Swal.fire("Registeration Successful!");
 
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -60,7 +62,10 @@ const Register = () => {
   return (
     <div>
       <div>
-        <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
+        <div
+          className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center"
+          data-aos="zoom-out-right"
+        >
           <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
             <div className="p-4 py-6 text-white bg-[#C3937C] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
               <div className="my-3 text-4xl font-bold tracking-wider text-center">
@@ -159,7 +164,7 @@ const Register = () => {
                   </button>
                 </div>
                 {/* Error Or success chcekc */}
-                <div className=" text-white bg-green-500">{successReg}</div>
+
                 <div className=" text-white bg-red-500"> {errorReg}</div>
               </form>
             </div>

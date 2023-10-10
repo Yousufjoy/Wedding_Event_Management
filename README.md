@@ -4,7 +4,7 @@ Features of the website :
 
 -Login and Registration:
 
-Our website offers secure login and registration options. Users can easily create accounts.
+This website offers secure login and registration options. Users can easily create accounts.
 
 -Access Control:
 
@@ -16,7 +16,7 @@ Essential website information, including our mission, services, and contact deta
 
 -Social Login with Google:
 
-We've simplified login by allowing users to use their Google accounts. This integration follows Google's security guidelines, and users can link their Google accounts for future access.
+I've simplified login by allowing users to use their Google accounts. This integration follows Google's security guidelines, and users can link their Google accounts for future access.
 
 -Strong Password Policy:
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { useContext, useState } from "react";
@@ -14,6 +14,8 @@ const Login = () => {
   const { loginUser } = AuthInfo;
   const auth = getAuth(app);
 
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -24,7 +26,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         // setSuccessLogin("Successfully Logged In!");
-        console.log(result);
+        navigate("/");
 
         Swal.fire("Logged in successfully!");
       })

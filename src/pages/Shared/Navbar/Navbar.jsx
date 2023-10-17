@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 
@@ -9,30 +9,21 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/">
+        <NavLink className="lg:text-[#C3937C] lg:text-lg" to="/">
           Home
         </NavLink>
-        {/* 
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-[#C3937C] text-lg bg-blue" : "text-black text-lg"
-          }
-          to="/"
-        >
-          Home
-        </NavLink> */}
       </li>
-
       <li>
-        <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/blog">
+        <NavLink className="lg:text-[#C3937C] lg:text-lg" to="/blog">
           Blog
         </NavLink>
       </li>
       <li>
-        <NavLink className="  lg:text-[#C3937C] lg:text-lg" to="/contact">
+        <NavLink className="lg:text-[#C3937C] lg:text-lg" to="/contact">
           Contact Us!
         </NavLink>
       </li>
+      {/* "Login" link for small screens */}
     </>
   );
 
@@ -75,12 +66,12 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <p className=" px-4"> {user.email}</p>
-            <button onClick={handleSignOut} className=" btn">
+            <p> {user.email}</p>
+            <button onClick={handleSignOut} className="btn ">
               Sign Out
             </button>
             <img
-              className=" w-[50px] h-[50px] "
+              className="w-[50px] h-[50px] "
               referrerPolicy="no-referrer"
               src={user.photoURL}
               alt=""
@@ -88,7 +79,7 @@ const Navbar = () => {
           </>
         ) : (
           <Link to="/login">
-            <button className="btn">Login</button>
+            <button className="btn mr-[20px]">Login</button>
           </Link>
         )}
       </div>

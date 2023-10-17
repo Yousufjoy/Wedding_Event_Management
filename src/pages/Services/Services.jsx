@@ -24,7 +24,7 @@ const Services = () => {
         Creating the <br /> Best Day Ever
       </h1> */}
       <div
-        className="grid lg:grid-cols-3 grid-cols-1 pl-[15px] lg:px-[50px] gap-6"
+        className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 pl-[15px] lg:px-[50px] gap-6 "
         data-aos="fade-up"
       >
         {services.map((service) => {
